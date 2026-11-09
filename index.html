@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Worlds — Private Beta</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0a0c; color: #f2f2f5; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 28px 24px; }
+  .card { max-width: 460px; width: 100%; text-align: center; }
+  .eyebrow { font-size: .72rem; letter-spacing: 3px; color: #8a8a96; font-weight: 600; }
+  .logo { font-size: 2.4rem; font-weight: 900; letter-spacing: 1px; margin-top: 10px; }
+  .beta-pill { display: inline-block; border: 1px solid #d4af37; color: #d4af37; font-weight: 700; font-size: .78rem; letter-spacing: 2px; border-radius: 999px; padding: 6px 18px; margin: 16px 0 6px; }
+  .sub { color: #c9c9d4; font-size: 1rem; margin: 10px 0 4px; }
+  .pitch { color: #9a9aa5; font-size: .9rem; line-height: 1.65; margin: 8px 0 4px; }
+  .video-wrap { margin: 20px auto 6px; border-radius: 14px; overflow: hidden; border: 1px solid #26262e; background: #000; max-width: 300px; }
+  .video-wrap video { display: block; width: 100%; aspect-ratio: 9 / 16; background: #000; }
+  .video-cap { font-size: .75rem; color: #6a6a75; margin-top: 8px; letter-spacing: 1px; }
+  .worlds { display: flex; gap: 10px; margin: 20px 0 6px; text-align: left; }
+  .world { flex: 1; border-radius: 12px; padding: 14px 12px; font-size: .82rem; line-height: 1.55; background: #121216; border: 1px solid #26262e; }
+  .world b { display: block; font-size: .92rem; margin-bottom: 4px; letter-spacing: .5px; }
+  .world.ft b { color: #c4a5ff; }
+  .world.br b { color: #ffb08a; }
+  .world span { color: #a5a5b0; }
+  .reels-block { border-radius: 12px; padding: 16px 14px; font-size: .85rem; line-height: 1.6; background: linear-gradient(135deg, rgba(123,47,247,.12), rgba(255,107,26,.10)); border: 1px solid #3a2f4a; margin-top: 12px; text-align: left; }
+  .reels-block b.ttl { display: block; font-size: .95rem; margin-bottom: 6px; letter-spacing: .5px; color: #fff; }
+  .reels-block span { color: #a5a5b0; }
+  .trust { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin: 18px 0 4px; font-size: .78rem; color: #8a8a96; }
+  .trust span::before { content: "✓ "; color: #d4af37; }
+  .dl { display: block; background: #f2f2f5; color: #0a0a0c; font-weight: 800; font-size: 1.1rem; padding: 18px; border-radius: 14px; text-decoration: none; margin: 20px 0 10px; letter-spacing: .5px; }
+  .dl:active { transform: scale(.97); }
+  .dl.disabled { background: #2a2a30; color: #777; pointer-events: none; }
+  .ver { color: #8a8a96; font-size: .8rem; margin-bottom: 22px; }
+  .steps { text-align: left; background: #121216; border: 1px solid #26262e; border-radius: 14px; padding: 18px; font-size: .88rem; line-height: 1.9; }
+  .steps b { color: #d4af37; }
+  .note { margin-top: 16px; font-size: .78rem; color: #8a8a96; line-height: 1.6; }
+  .iphone { margin: 18px 0 4px; background: #121216; border: 1px solid #d4af37; border-radius: 14px; padding: 16px; font-size: .88rem; line-height: 1.65; text-align: left; }
+  .iphone b.ttl { display: block; font-size: .95rem; margin-bottom: 6px; }
+  .iphone span { color: #a5a5b0; }
+  .iphone .dl { margin: 12px 0 2px; font-size: 1rem; padding: 14px; }
+  .footer { margin-top: 22px; padding-top: 16px; border-top: 1px solid #1e1e24; font-size: .75rem; color: #6a6a75; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="eyebrow">A LUCKY MEADOWS&trade; PRODUCT</div>
+  <div class="logo">Lucky Worlds</div>
+  <div class="beta-pill">PRIVATE BETA</div>
+  <div class="sub">Two worlds. One app. Real people, verified by humans.</div>
+  <div class="pitch">We are onboarding beta testers and creators now. Download the beta, complete verification, and help shape the launch.</div>
+  <div class="video-wrap">
+    <video controls preload="metadata" poster="poster.jpg" playsinline>
+      <source src="commercial.mp4" type="video/mp4">
+      Your browser can't play this video.
+    </video>
+  </div>
+  <div class="video-cap">WATCH THE COMMERCIAL</div>
+  <div class="worlds">
+    <div class="world ft"><b>Facetok</b><span>The adult social network. Explicit-friendly and 18+, with every member verified by a real person.</span></div>
+    <div class="world br"><b>BindR</b><span>Flirty dating, outside the bedroom. Sparks, dates, and chemistry — no explicit content.</span></div>
+  </div>
+  <div class="reels-block"><b class="ttl">🎬 Reels — the produced lane</b><span>Scripted series, performances, vertical video — swipe to the next. Facetok's lane is explicit-friendly 18+, BindR's stays flirty-not-explicit.</span></div>
+  <div class="trust"><span>Human verification</span><span>18+ only</span><span>Block &amp; report everywhere</span></div>
+  <a class="dl disabled" id="dlBtn" href="#">Loading…</a>
+  <div class="ver" id="verLine">Fetching the latest version…</div>
+  <div class="iphone" id="iphoneBox" style="display:none">
+    <b class="ttl">📱 On iPhone?</b>
+    <span>No App Store needed. Tap below to open the web app, then in Safari tap <b>Share → Add to Home Screen</b> — it installs on your home screen and opens fullscreen like a real app.</span>
+    <a class="dl" id="iosBtn" href="app/">Open the Web App</a>
+  </div>
+  <div class="steps">
+    <div><b>1.</b> Tap the button above to download the beta</div>
+    <div><b>2.</b> Open the downloaded file and tap Install</div>
+    <div><b>3.</b> If your phone asks, allow "Install unknown apps" for your browser</div>
+    <div><b>4.</b> Open Lucky Worlds, choose your world, and complete verification</div>
+  </div>
+  <div class="note">If nothing happens when you tap download, open this page in <b>Chrome</b> (tap &#8942; &rarr; "Open in Chrome") and try again.<br><br>Android &amp; iPhone.</div>
+  <div class="footer">&copy; 2026 Lucky Meadows&trade;<br>For adults 18 and over only.</div>
+</div>
+<script>
+(function(){
+  // The download link lives on the backend (Supabase app_config → invite_url),
+  // so updating it there updates this page with no rebuild. FALLBACK is the
+  // same-site APK file (no Google in the middle).
+  var SB_URL = 'https://wfvdhxadsllqrouapoup.supabase.co';
+  var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndmdmRoeGFkc2xscXJvdWFwb3VwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM3MjczMDEsImV4cCI6MjEwOTMwMzMwMX0.mk2pbru_bLQE1b9bWefvPenhlu_n2FTa6fwPkcePJ7M';
+  var FALLBACK = 'LuckyWorlds-1.3.9.apk';
+  var FALLBACK_VER = '1.3.9';
+  var btn = document.getElementById('dlBtn');
+  var ver = document.getElementById('verLine');
+  function set(url, label){
+    btn.href = url;
+    btn.classList.remove('disabled');
+    btn.textContent = 'Join the Beta — Download';
+    ver.textContent = label || '';
+  }
+  function verLabel(url, fb){
+    var m = url.match(/LuckyWorlds-([\d.]+)\.apk/);
+    return m ? 'Version ' + m[1] + ' · Android' : (fb || 'Android');
+  }
+  fetch(SB_URL + '/rest/v1/app_config?key=eq.invite_url&select=value', {
+    headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY }
+  }).then(function(r){ return r.json(); }).then(function(rows){
+    if (rows && rows[0] && rows[0].value) {
+      set(rows[0].value, verLabel(rows[0].value, 'Android'));
+    } else { set(FALLBACK, 'Version ' + FALLBACK_VER + ' · Android'); }
+  }).catch(function(){ set(FALLBACK, 'Version ' + FALLBACK_VER + ' · Android'); });
+  if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+    document.getElementById('iphoneBox').style.display = 'block';
+  }
+  setTimeout(function(){ if (btn.classList.contains('disabled')) set(FALLBACK, 'Version ' + FALLBACK_VER + ' · Android'); }, 8000);
+})();
+</script>
+</body>
+</html>
